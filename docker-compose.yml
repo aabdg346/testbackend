@@ -19,7 +19,7 @@ services:
       PUBLIC_URL: 'https://localhost:8080/ui/search'
       FRONTEND_URL: 'https://localhost:8080/ui/search'
   booking-ui:
-    image: aamarebdg/booking-ui-bdg:local
+    image: aamarebdg/booking-ui-bdg:v1
     restart: always
     networks:
       http:
