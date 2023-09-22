@@ -161,6 +161,18 @@ class NavBar extends React.Component<Props, State> {
                 <Nav className="ms-auto">
                     {initMergeButton}
                     {mergeRequestsButton}
+                    //legend Component
+                    <div className="nav-link legend">
+                        <span onClick={toggleLegend}>Legend</span>
+                        {showLegend && (
+                            <div className="legend-popup">
+                                <div><span className="legend-green"></span> Available</div>
+                                <div><span className="legend-red"></span> Unavailable</div>
+                                <div><span className="legend-purple"></span> My Booking</div>
+                            </div>
+                        )}
+                    </div>
+
                 </Nav>
             </>
         );

@@ -6,3 +6,49 @@
 .navbar-brand > img {
     height: 2rem;
 }
+
+.nav-link.legend {
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .legend-popup {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    display: none;
+  }
+  
+  /* CSS for Legend Icons (colors) */
+  .legend-popup div {
+    margin: 5px 0;
+  }
+  
+  .legend-green {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: green;
+    margin-right: 5px;
+  }
+  
+  .legend-red {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: red;
+    margin-right: 5px;
+  }
+  
+  .legend-purple {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: purple;
+    margin-right: 5px;
+  }
