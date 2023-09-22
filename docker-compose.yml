@@ -26,7 +26,7 @@ services:
     environment:
       FRONTEND_URL: 'https://localhost:8080/ui/search'
   admin-ui:
-    image: aamarebdg/admin-ui-bdg:local
+    image: aamarebdg/admin-ui-bdg:v1
     restart: always
     networks:
       http:
