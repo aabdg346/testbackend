@@ -8,7 +8,7 @@ html, body, div#root {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    background-color: #f03ad8;
+    background-color: #f5f5f5;
     text-align: center;
     position: relative;
     padding-bottom: 50px;
@@ -23,6 +23,6 @@ html, body, div#root {
 }
 
 .container-center .container-center-inner .logo {
-    width: 50%;
+    width: 100%;
     margin-bottom: 50px;
 }
