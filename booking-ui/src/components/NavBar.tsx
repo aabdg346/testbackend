@@ -24,11 +24,6 @@ interface Props extends WithTranslation {
     router: NextRouter
 }
 
-// Define your inner component here
-const MyComponent: React.FC<{ legendVisible: boolean; toggleLegend: () => void }> = ({ legendVisible, toggleLegend }) => {
-    // ... (component code)
-};
-
 class NavBar extends React.Component<Props, State> {
     constructor(props: any) {
         super(props);
@@ -202,37 +197,8 @@ class NavBar extends React.Component<Props, State> {
                     </Container>
                 </Navbar>
 
-                <div>
-                    <nav>
-                        <ul>
-                            <li onClick={this.toggleLegend}>Legend</li>
-                        </ul>
-                    </nav>
-                    {this.state.legendVisible && (
-                        <div className="legend-container">
-                            <div className="square green"></div>
-                            <div className="square red"></div>
-                            <div className="square purple"></div>
-                        </div>
-                    )}
-                </div>
+                
 
-                {/* Render the inner component and pass legendVisible and toggleLegend as props */}
-                <MyComponent
-                    legendVisible={this.state.legendVisible}
-                    toggleLegend={this.toggleLegend}
-                />
-
-                {/* Additional HTML content for Legend */}
-                {this.state.legendVisible && (
-                    <div>
-                        <h1>Legend</h1>
-                        <div className="square green">Green Square: Represents something</div>
-                        <div className="square red">Red Square: Represents something else</div>
-                        <div className="square purple">Purple Square: Represents yet another thing</div>
-                    </div>
-                )}
-                 
                 <Modal show={this.state.showMergeInit} onHide={() => this.setState({ showMergeInit: false })}>
                     <Modal.Header closeButton>
                         <Modal.Title>{this.props.t("mergeUserAccounts")}</Modal.Title>
