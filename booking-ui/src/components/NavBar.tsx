@@ -160,29 +160,28 @@ class NavBar extends React.Component<Props, State> {
                     {signOffButton}
 
                     <OverlayTrigger
-        trigger="click" // Change this trigger to your preference (e.g., "hover" or "focus" if needed)
-        placement="bottom"
-        overlay={
-          <Popover id="legend-popover">
-            {/* Add your legend content here */}
-            <Popover.Title>Legend</Popover.Title>
-            <Popover.Content>
-              <div>
-                <span className="legend-color green"></span> Available
-              </div>
-              <div>
-                <span className="legend-color red"></span> Unavailable
-              </div>
-              <div>
-                <span className="legend-color purple"></span> My Booking
-              </div>
-            </Popover.Content>
-          </Popover>
-        }
-      >
-        <Nav.Link>{this.props.t("Legend")}</Nav.Link>
-      </OverlayTrigger>
-
+          trigger="click"
+          placement="bottom"
+          overlay={
+            <Popover id="legend-popover">
+              <Popover.Content>
+                <div className="legend">
+                  <div>
+                    <span className="legend-color green"></span> Available
+                  </div>
+                  <div>
+                    <span className="legend-color red"></span> Unavailable
+                  </div>
+                  <div>
+                    <span className="legend-color purple"></span> My Booking
+                  </div>
+                </div>
+              </Popover.Content>
+            </Popover>
+          }
+        >
+          <Nav.Link>{this.props.t("Legend")}</Nav.Link>
+        </OverlayTrigger>
 
                 </Nav>
                 <Nav className="ms-auto">
