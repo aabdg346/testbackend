@@ -36,8 +36,7 @@ class NavBar extends React.Component<Props, State> {
             invalidTargetUserEmail: false,
             mergeRequests: [],
             allowMergeInit: false,
-            allowAdmin: false,
-            legendVisible: false, // Initialize legendVisible
+            allowAdmin: false
         };
     }
 
