@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navbar, Nav, Modal, Button, Form, Badge, Container, NavLink } from 'react-bootstrap';
-import { Popover, OverlayTrigger } from 'react-bootstrap'; 
 import { Ajax, User, MergeRequest, AjaxCredentials } from 'flexspace-commons';
 import RuntimeConfig from './RuntimeConfig';
 import { Users as IconMerge, Bell as IconAlert, Settings as IconSettings, Calendar as IconCalendar, PlusSquare as IconPlus } from 'react-feather';
@@ -158,44 +157,45 @@ class NavBar extends React.Component<Props, State> {
                     <Nav.Link as={Link} eventKey="/preferences" href="/preferences">{RuntimeConfig.EMBEDDED ? <IconSettings className="feather feather-lg" /> : this.props.t("preferences")}</Nav.Link>
                     {adminButton}
                     {signOffButton}
-
-                    <OverlayTrigger
-          trigger="click"
-          placement="bottom"
-          overlay={
-            <Popover id="legend-popover">
-              <Popover.Content>
-                <div className="legend">
-                  <div>
-                    <span className="legend-color green"></span> Available
-                  </div>
-                  <div>
-                    <span className="legend-color red"></span> Unavailable
-                  </div>
-                  <div>
-                    <span className="legend-color purple"></span> My Booking
-                  </div>
-                </div>
-              </Popover.Content>
-            </Popover>
-          }
-        >
-          <Nav.Link>{this.props.t("Legend")}</Nav.Link>
-        </OverlayTrigger>
-
                 </Nav>
                 <Nav className="ms-auto">
                     {initMergeButton}
                     {mergeRequestsButton}
             
                 </Nav>
-
-                
-
             </>
         );
 
-        
+            // Define your component or module
+const MyComponent = () => {
+    const [legendVisible, setLegendVisible] = useState(false);
+    const toggleLegend = () => {
+        setLegendVisible(!legendVisible);
+  };
+
+  return (
+    <div>
+      <nav>
+        <ul>
+          <li onClick={toggleLegend}>Legend</li>
+        </ul>
+      </nav>
+      {legendVisible && (
+        <div className="legend-container">
+          <div className="square green"></div>
+          <div className="square red"></div>
+          <div className="square purple"></div>
+        </div>
+      )}
+    </div>
+  );
+};
+  
+  // Export the component or module using a variable or function
+  const DefaultExport = MyComponent;
+  
+  export { DefaultExport };
+  
 
         if (!RuntimeConfig.EMBEDDED) {
             collapsable = (
