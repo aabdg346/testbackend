@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, Modal, Button, Form, Badge, Container, NavLink } from 'react-bootstrap';
+import { Popover, OverlayTrigger } from 'react-bootstrap'; 
 import { Ajax, User, MergeRequest, AjaxCredentials } from 'flexspace-commons';
 import RuntimeConfig from './RuntimeConfig';
 import { Users as IconMerge, Bell as IconAlert, Settings as IconSettings, Calendar as IconCalendar, PlusSquare as IconPlus } from 'react-feather';
@@ -157,14 +158,45 @@ class NavBar extends React.Component<Props, State> {
                     <Nav.Link as={Link} eventKey="/preferences" href="/preferences">{RuntimeConfig.EMBEDDED ? <IconSettings className="feather feather-lg" /> : this.props.t("preferences")}</Nav.Link>
                     {adminButton}
                     {signOffButton}
+
+                    <OverlayTrigger
+        trigger="click" // Change this trigger to your preference (e.g., "hover" or "focus" if needed)
+        placement="bottom"
+        overlay={
+          <Popover id="legend-popover">
+            {/* Add your legend content here */}
+            <Popover.Title>Legend</Popover.Title>
+            <Popover.Content>
+              <div>
+                <span className="legend-color green"></span> Available
+              </div>
+              <div>
+                <span className="legend-color red"></span> Unavailable
+              </div>
+              <div>
+                <span className="legend-color purple"></span> My Booking
+              </div>
+            </Popover.Content>
+          </Popover>
+        }
+      >
+        <Nav.Link>{this.props.t("Legend")}</Nav.Link>
+      </OverlayTrigger>
+
+
                 </Nav>
                 <Nav className="ms-auto">
                     {initMergeButton}
                     {mergeRequestsButton}
             
                 </Nav>
+
+                
+
             </>
         );
+
+        
 
         if (!RuntimeConfig.EMBEDDED) {
             collapsable = (
