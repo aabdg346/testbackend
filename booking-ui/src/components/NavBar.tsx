@@ -121,11 +121,7 @@ class NavBar extends React.Component<Props, State> {
         );
     }
 
-    toggleLegend = () => {
-        this.setState((prevState) => ({
-            legendVisible: !prevState.legendVisible,
-        }));
-    };
+
 
     render() {
         if (this.state.redirect != null) {
