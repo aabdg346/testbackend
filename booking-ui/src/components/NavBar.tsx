@@ -129,12 +129,6 @@ class NavBar extends React.Component<Props, State> {
             return <></>;
         }
 
-            // Define your inner component
-    const MyComponent = () => {
-        const [legendVisible, setLegendVisible] = useState(false);
-        const toggleLegend = () => {
-          setLegendVisible(!legendVisible);
-        };
 
         let signOffButton = <></>;
         let adminButton = <></>;
@@ -194,23 +188,6 @@ class NavBar extends React.Component<Props, State> {
                         {collapsable}
                     </Container>
                 </Navbar>
-
-                <div>
-          <nav>
-            <ul>
-              <li onClick={toggleLegend}>Legend</li>
-            </ul>
-          </nav>
-          {legendVisible && (
-            <div className="legend-container">
-              <div className="square green"></div>
-              <div className="square red"></div>
-              <div className="square purple"></div>
-            </div>
-          )}
-        </div>
-
-        <MyComponent /> {/* Render the inner component */}
 
                 <Modal show={this.state.showMergeInit} onHide={() => this.setState({ showMergeInit: false })}>
                     <Modal.Header closeButton>
