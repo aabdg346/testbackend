@@ -129,6 +129,13 @@ class NavBar extends React.Component<Props, State> {
             return <></>;
         }
 
+            // Define your inner component
+    const MyComponent = () => {
+        const [legendVisible, setLegendVisible] = useState(false);
+        const toggleLegend = () => {
+          setLegendVisible(!legendVisible);
+        };
+
         let signOffButton = <></>;
         let adminButton = <></>;
         let initMergeButton = <></>;
@@ -166,36 +173,7 @@ class NavBar extends React.Component<Props, State> {
             </>
         );
 
-            // Define your component or module
-const MyComponent = () => {
-    const [legendVisible, setLegendVisible] = useState(false);
-    const toggleLegend = () => {
-        setLegendVisible(!legendVisible);
-  };
 
-  return (
-    <div>
-      <nav>
-        <ul>
-          <li onClick={toggleLegend}>Legend</li>
-        </ul>
-      </nav>
-      {legendVisible && (
-        <div className="legend-container">
-          <div className="square green"></div>
-          <div className="square red"></div>
-          <div className="square purple"></div>
-        </div>
-      )}
-    </div>
-  );
-};
-  
-  // Export the component or module using a variable or function
-  const DefaultExport = MyComponent;
-  
-  export { DefaultExport };
-  
 
         if (!RuntimeConfig.EMBEDDED) {
             collapsable = (
@@ -216,6 +194,24 @@ const MyComponent = () => {
                         {collapsable}
                     </Container>
                 </Navbar>
+
+                <div>
+          <nav>
+            <ul>
+              <li onClick={toggleLegend}>Legend</li>
+            </ul>
+          </nav>
+          {legendVisible && (
+            <div className="legend-container">
+              <div className="square green"></div>
+              <div className="square red"></div>
+              <div className="square purple"></div>
+            </div>
+          )}
+        </div>
+
+        <MyComponent /> {/* Render the inner component */}
+
                 <Modal show={this.state.showMergeInit} onHide={() => this.setState({ showMergeInit: false })}>
                     <Modal.Header closeButton>
                         <Modal.Title>{this.props.t("mergeUserAccounts")}</Modal.Title>
