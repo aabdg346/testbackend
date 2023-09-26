@@ -24,6 +24,7 @@ interface Props extends WithTranslation {
     router: NextRouter
 }
 
+
 class NavBar extends React.Component<Props, State> {
     constructor(props: any) {
         super(props);
@@ -167,6 +168,7 @@ class NavBar extends React.Component<Props, State> {
                     {mergeRequestsButton}
             
                 </Nav>
+
             </>
         );
 
@@ -192,7 +194,13 @@ class NavBar extends React.Component<Props, State> {
                     </Container>
                 </Navbar>
 
-                
+                <Nav>
+                    <ul>
+                        <li>
+                            <span>Static Item</span>
+                        </li>
+                    </ul>
+                </Nav>
 
                 <Modal show={this.state.showMergeInit} onHide={() => this.setState({ showMergeInit: false })}>
                     <Modal.Header closeButton>

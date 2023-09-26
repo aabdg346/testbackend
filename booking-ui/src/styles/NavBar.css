@@ -6,3 +6,23 @@
 .navbar-brand > img {
     height: 2rem;
 }
+
+
+#legend-box {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1;
+}
+
+/* CSS for the color squares */
+.color-square {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 5px;
+}
