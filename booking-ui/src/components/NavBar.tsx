@@ -192,15 +192,15 @@ class NavBar extends React.Component<Props, State> {
                         <Navbar.Brand as={NavLink} to="/search"><img src="/ui/seatsurfing.svg" alt="Seatsurfing" /></Navbar.Brand>
                         {collapsable}
                     </Container>
-                </Navbar>
-
-                <Nav>
+                    <Nav>
                     <ul>
                         <li>
                             <span>Static Item</span>
                         </li>
                     </ul>
                 </Nav>
+                </Navbar>
+
 
                 <Modal show={this.state.showMergeInit} onHide={() => this.setState({ showMergeInit: false })}>
                     <Modal.Header closeButton>
