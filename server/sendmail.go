@@ -11,6 +11,7 @@ import (
 
 var EmailTemplateSignup, _ = filepath.Abs("./res/email-signup.txt")
 var EmailTemplateConfirm, _ = filepath.Abs("./res/email-confirm.txt")
+var EmailTemplateConfirmBooking, _ = filepath.Abs("./res/email-confirmbooking.txt")
 var EmailTemplateResetpassword, _ = filepath.Abs("./res/email-resetpw.txt")
 var SendMailMockContent = ""
 

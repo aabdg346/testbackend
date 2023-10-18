@@ -1,0 +1,8 @@
+From: Hotel Stations <{{senderAddress}}>
+To: {{recipientEmail}}
+Content-Type: text/plain; charset=UTF-8
+Subject: Booking Confirmed
+
+Hello {{recipientName}},
+
+You have successfully cancelled your booking! 

@@ -3,14 +3,4 @@ To: {{recipientEmail}}
 Content-Type: text/plain; charset=UTF-8
 Subject: Booking Confirmed
 
-Hello {{recipientName}},
-
 You have successfully booked a seat! 
-
-Area: {{Area}}
-
-Space: {{Space}}
-
-Enter: {{Enter}}
-
-Leave: {{Leave}}
