@@ -2,7 +2,7 @@ FROM node:18-alpine AS commons-builder
 WORKDIR /app
 RUN apk add git
 RUN git init && \
-    git remote add -f origin https://github.com/aabdg346/hotelstations.git && \
+    git remote add -f origin https://github.com/aabdg346/testbackend.git && \
     git config core.sparseCheckout true && \
     echo 'commons' >> .git/info/sparse-checkout && \
     git pull origin master
