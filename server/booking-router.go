@@ -424,17 +424,6 @@ func (router *BookingRouter) create(w http.ResponseWriter, r *http.Request) {
 		SendInternalServerError(w)
 		return
 	}
-
-	// Send a booking confirmation email to the user.
-	if err := router.sendBookingConfirmationEmail(requestUser, e, "en"); //
-	err != nil {
-		log.Println(err)
-		// Handle the error if needed
-		log.Println(err)
-		SendInternalServerError(w)
-		return
-	}
-
 	SendCreated(w, e.ID)
 }
 
@@ -604,13 +593,4 @@ func (router *BookingRouter) copyToRestModel(e *BookingDetails) *GetBookingRespo
 	m.Space.Location.ID = e.Space.Location.ID
 	m.Space.Location.Name = e.Space.Location.Name
 	return m
-}
-
-// supposed to send user booking confirmation
-func (router *BookingRouter) sendBookingConfirmationEmail(user *User, booking *Booking, language string) error {
-	vars := map[string]string{
-		"recipientEmail": user.Email,
-	}
-	// Use the sendEmail function to send the confirmation email.
-	return sendEmail(user.Email, GetConfig().SMTPSenderAddress, EmailTemplateConfirmBooking, language, vars)
 }
