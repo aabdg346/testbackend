@@ -639,8 +639,8 @@ class Search extends React.Component<Props, State> {
         <Modal.Body>
           <p>{this.props.t("space")}: {this.state.selectedSpace?.name}</p>
           <p>{this.props.t("area")}: {this.getLocationName()}</p>
-          <p>{this.props.t("enter")}: {Formatting.getFormatterShort().format(Formatting.convertToFakeUTCDate(new Date(this.state.enter)))}</p>
-          <p>{this.props.t("leave")}: {Formatting.getFormatterShort().format(Formatting.convertToFakeUTCDate(new Date(this.state.leave)))}</p>
+          <p>{this.props.t("enter")}: {new Date(this.state.enter).toLocaleDateString}</p>
+          <p>{this.props.t("leave")}: {new Date(this.state.leave).toLocaleDateString}</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => this.setState({ showConfirm: false })}>
